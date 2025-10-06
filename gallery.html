@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | CSE Department</title>
+
+  <style>
+    body {
+      background-color: #fff9b0 ; /* light purple */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6a0dad; /* dark purple */
+      margin-top: 20px;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    /* Three Dots Menu */
+    .menu {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .dots {
+      color: #6a0dad; /* dark purple */
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #e8d9ff; /* pastel light purple */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      min-width: 140px;
+      text-align: left;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #4b0082;
+      font-weight: bold;
+    }
+
+    .dropdown a:hover {
+      background-color: #d6c7f7;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      margin-top: 40px; /* leave space for menu */
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Popup (Lightbox) */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    .close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #ff99ff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Three Dots Menu -->
+  <div class="menu">
+    <span class="dots" onclick="toggleMenu()">&#8942;</span>
+    <div class="dropdown" id="dropdownMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Mision</a>
+      <a href="mission.html">Mission</a>
+      <a href="gallery.html">Gallery</a>
+       <a href="notice.html">Notice</a>
+    </div>
+  </div>
+
+  <h1>CSE<br>Gallery</h1>
+
+  <!-- Gallery Images -->
+  <div class="gallery">
+   <img src="assets/images/gallery1.jpg" alt="Gallery Image 1" />
+
+    <img src="assets/images/gallery2.jpg" alt="Gallery Image 2" />
+
+    <img src="assets/images/gallery3.jpg" alt="Gallery Image 3" />
+
+    <img src="assets/images/gallery4.jpg" alt="Gallery Image 4" />
+
+    <img src="assets/images/gallery5.jpg" alt="Gallery Image 5" />
+  </div>
+
+  <!-- Popup / Lightbox -->
+  <div class="popup" id="popup">
+    <span class="close" id="closeBtn">&times;</span>
+    <img id="popupImg" src="" alt="Big view" />
+  </div>
+
+  <script>
+    // Three Dots Menu
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    window.addEventListener("click", function(e) {
+      const menu = document.getElementById("dropdownMenu");
+      if (!e.target.matches('.dots')) {
+        menu.style.display = "none";
+      }
+    });
+
+    // Popup Image
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popupImg');
+    const closeBtn = document.getElementById('closeBtn');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        popupImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) popup.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

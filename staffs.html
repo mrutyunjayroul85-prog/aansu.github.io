@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staffs | Department of CSE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #c8f7c5, #a8e6a3); /* Soft pastel green gradient */
+      color: #000;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      width: 200px;
+      border-radius: 8px;
+      padding: 10px;
+      transition: 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 10px 0;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e0ff;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    /* Content */
+    .content {
+      padding: 120px 40px 60px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 50px;
+      font-weight: bold;
+      color: #056608;
+      text-shadow: 2px 2px 6px white;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: rgba(5, 102, 8, 0.9);
+      color: white;
+      font-size: 20px;
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: 0.3s ease;
+    }
+
+    .photo-box {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #d1ffd1;
+      border-radius: 12px;
+      border: 1px dashed #6ac36a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 12px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="mission.html">Mission</a>
+      <a href="staffs.html">Staffs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="notice.html">Notice</a>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Staff Members</h1>
+
+    <table>
+      <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Qualification</th>
+        <th>Experience</th>
+        <th>Email</th>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff1.jpg" alt="Staff Name"></div></td>
+        <td>Er. Satabdi Palit</td>
+        <td>Sr. Lecturer</td>
+        <td>M.Tech</td>
+        <td>08 Years</td>
+        <td>satabdipalit6@gmail.com</td>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff2.jpg" alt="Staff Name"></div></td>
+        <td>Er. Tapan Kumar Ojha</td>
+        <td>Sr. Lecturer</td>
+        <td>MCA</td>
+        <td>15 Years</td>
+        <td>tpn.ojha2@gmail.com</td>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff6.jpg" alt="Staff Name"></div></td>
+        <td>Mr. Abinas Parida</td>
+        <td>Lecturer</td>
+        <td>MCA</td>
+        <td>04 Years</td>
+        <td>abinasparida144@gmail.com</td>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff5.jpg" alt="Staff Name"></div></td>
+        <td>Er. Jyotshnamayee Jena</td>
+        <td>HOD</td>
+        <td>B.Tech</td>
+        <td>05 Years</td>
+        <td>j.jena06@gmail.com</td>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff4.jpg" alt="Staff Name"></div></td>
+        <td>Mr. Biplab Kumar Das</td>
+        <td>Lecturer</td>
+        <td>MCA</td>
+        <td>05 Years</td>
+        <td>biplabdas130@gmail.com</td>
+      </tr>
+
+      <tr>
+        <td><div class="photo-box"><image src="assets/images/staff3.jpg" alt="Staff Name"></div></td>
+        <td>Mr. Tanmaya Ranjan Sahoo</td>
+        <td>Lecturer</td>
+        <td>M.Sc</td>
+        <td>02 Years</td>
+        <td>tanmayaranjansahoo58@gmail.com</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department of CSE | Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: url("assets/images/bg-home.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      color: black;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      width: 200px;
+      border-radius: 8px;
+      padding: 10px;
+      transition: 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e0ff;
+    }
+
+    /* Main Content */
+    .content {
+      position: relative;
+      margin-top: 150px;
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .content h1 {
+      font-size: 70px;
+      font-weight: bold;
+      color: maroon; /* changed from white */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* subtle shadow */
+      margin-bottom: 20px;
+    }
+
+    .content h2,
+    .content h3 {
+      color: black; /* changed from white */
+      text-shadow: none; /* remove shadow for clarity */
+    }
+
+    .content h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .content h3 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 60px;
+    }
+
+    /* HOD Section */
+    .hod-section {
+      background-color: rgba(255, 255, 255, 0.6); /* lighter white / low intensity */
+      display: inline-block;
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .hod-section h4 {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00274d;
+      margin-bottom: 25px;
+    }
+
+    .hod-photo {
+      width: 230px;
+      height: 230px;
+      background-color: #d3d3d3;
+      border-radius: 12px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .hod-details {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 16px;
+      color: #000;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hod-section {
+        width: 90%;
+        padding: 25px;
+      }
+
+      .hod-photo {
+        width: 180px;
+        height: 180px;
+      }
+
+      .content h1 {
+        font-size: 50px;
+      }
+
+      .content h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="mission.html">Mission</a>
+      <a href="staffs.html">Staffs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="notice.html">Notice</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome</h1>
+    <h2>Department of Computer Science & Engineering</h2>
+    <h3>Bhadrak Engineering School & Technology, Asurali, Bhadrak</h3>
+
+    <!-- HOD Section -->
+    <div class="hod-section">
+      <h4>Head of the Department:<br> Er. Jyotshnamayee Jena</h4>
+      <div class="hod-photo"><image src="assets/images/hod.jpg" alt="hod name"></div>
+      <div class="hod-details">
+        <p><strong>Designation:</strong> HOD</p>
+        <p><strong>Qualification:</strong> B.Tech</p>
+        <p><strong>Experience:</strong> 04 Years</p>
+        <p><strong>Contact No:</strong> +91 7978325619</p>
+        <p><strong>Email:</strong> Jyotshnamayeejena023@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

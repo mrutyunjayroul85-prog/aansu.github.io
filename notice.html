@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notice | Department of CSE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f2f2f2, #d9d9d9); /* Soft pastel grey gradient */
+      color: black;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      width: 200px;
+      border-radius: 8px;
+      padding: 10px;
+      transition: 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 10px 0;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e0ff;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    /* Content */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%;
+    }
+
+    .content h1 {
+      font-size: 50px;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 2px 2px 6px white;
+      margin-bottom: 25px;
+    }
+
+    .content p {
+      font-size: 20px;
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 25px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 500;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="mission.html">Mission</a>
+      <a href="staffs.html">Staffs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="notice.html">Notice</a>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Notice Board</h1>
+    <p>No latest notice for now 😢</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
